@@ -31,6 +31,9 @@ LABEL io.k8s.description="Fluentd container for collecting logs from other fluen
 
 # add files
 ADD artifactory.repo /etc/yum.repos.d/
+RUN yum-config-manager \
+       --add-repo \
+       https://repo.schwarz/artifactory/rpm-centos-remote/7/os/x86_64
 RUN ls -la /etc/yum.repos.d/
 ADD run.sh fluentd.conf.template passwd.template fluentd-check.sh ${HOME}/
 ADD common-*.sh /tmp/
