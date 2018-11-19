@@ -35,10 +35,10 @@ LABEL io.k8s.description="Fluentd container for collecting logs from other fluen
 
 # add files
 
-echo "proxy=${PROXY}" >> /etc/yum.conf
-echo "proxy_username=${PROXY_USER}" >> /etc/yum.conf
-echo "proxy_password=${PROXY_PW}">> /etc/yum.conf
-RUN cat /etc/yum.conf
+RUN echo "proxy=${PROXY}" >> /etc/yum.conf &&\
+    echo "proxy_username=${PROXY_USER}" >> /etc/yum.conf  &&\
+    echo "proxy_password=${PROXY_PW}">> /etc/yum.conf  &&\
+    cat /etc/yum.conf
 ADD run.sh fluentd.conf.template passwd.template fluentd-check.sh ${HOME}/
 ADD common-*.sh /tmp/
 
