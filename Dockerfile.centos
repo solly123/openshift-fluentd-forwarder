@@ -20,7 +20,11 @@ ENV HOME=/opt/app-root/src \
   CERT_PATH=/etc/pki/tls/certs/local.crt \
   KEY_PATH=/etc/pki/tls/private/local.key \
   KEY_PASSPHRASE= \
-  SHARED_KEY=ocpaggregatedloggingsharedkey
+  SHARED_KEY=ocpaggregatedloggingsharedkey  \
+  PROXY= \
+  PROXY_USER= \
+  PROXY_PW=
+  
 
 LABEL io.k8s.description="Fluentd container for collecting logs from other fluentd instances" \
   io.k8s.display-name="Fluentd Forwarder (${FLUENTD_VERSION})" \
