@@ -31,16 +31,17 @@ LABEL io.k8s.description="Fluentd container for collecting logs from other fluen
 
 # add files
 ADD artifactory.repo /etc/yum.repos.d/
-RUN echo "4.160.23.240 repo.schwarz" >> /etc/hosts
 ADD run.sh fluentd.conf.template passwd.template fluentd-check.sh ${HOME}/
 ADD common-*.sh /tmp/
 
 # set permissions on files
-RUN chmod g+rx ${HOME}/fluentd-check.sh && \
+RUN echo "4.160.23.240 repo.schwarz" >> /etc/hosts && \
+    chmod g+rx ${HOME}/fluentd-check.sh && \
     chmod +x /tmp/common-*.sh
 
 # execute files and remove when done
-RUN /tmp/common-install.sh && \
+RUN echo "4.160.23.240 repo.schwarz" >> /etc/hosts && \
+    /tmp/common-install.sh && \
     rm -f /tmp/common-*.sh
 
 # set working dir
