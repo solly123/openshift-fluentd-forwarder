@@ -1,5 +1,5 @@
 [Artifactory]
 name=Artifactory
-baseurl=https://repo.schwarz/artifactory/rpm-centos-remote/7/os/x86_64
+mirrorlist=https://repo.schwarz/artifactory/rpm-centos-remote/7/os/x86_64
 enabled=1
 gpgcheck=0
