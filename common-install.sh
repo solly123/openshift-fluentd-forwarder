@@ -43,6 +43,8 @@ yum clean all
 rm -rf /var/cache/yum/*
 rm -rf /var/lib/yum/*
 
+ruby -v
+
 # set home directory
 mkdir -p ${HOME} && \
 
